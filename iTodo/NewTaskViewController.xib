@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewTaskViewController" customModule="iTodo" customModuleProvider="target">
+            <connections>
+                <outlet property="noteTextField" destination="MJM-Z7-gEh" id="MLa-h8-ONS"/>
+                <outlet property="titleTextField" destination="Sgi-Vf-XNm" id="alF-qi-sYB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAC-MD-tZJ">
+                    <rect key="frame" x="538" y="32" width="30" height="30"/>
+                    <state key="normal" title="完成"/>
+                    <connections>
+                        <action selector="completeButtonClick:" destination="-1" eventType="touchUpInside" id="Lrm-xH-jTk"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="主题" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sgi-Vf-XNm">
+                    <rect key="frame" x="32" y="78" width="536" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="备注" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MJM-Z7-gEh">
+                    <rect key="frame" x="32" y="111" width="536" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSG-en-2lJ">
+                    <rect key="frame" x="32" y="32" width="30" height="30"/>
+                    <state key="normal" title="取消"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="jSG-en-2lJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="9w2-hZ-eTE"/>
+                <constraint firstAttribute="trailing" secondItem="Sgi-Vf-XNm" secondAttribute="trailing" constant="32" id="BTV-Jl-fLU"/>
+                <constraint firstItem="jSG-en-2lJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="32" id="C6j-kQ-ij8"/>
+                <constraint firstItem="MAC-MD-tZJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="32" id="EeX-kW-Ibf"/>
+                <constraint firstItem="MJM-Z7-gEh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="T0x-Dj-h70"/>
+                <constraint firstItem="Sgi-Vf-XNm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="ZeX-8Q-2cY"/>
+                <constraint firstItem="Sgi-Vf-XNm" firstAttribute="top" secondItem="MAC-MD-tZJ" secondAttribute="bottom" constant="16" id="bi0-gu-G47"/>
+                <constraint firstItem="MJM-Z7-gEh" firstAttribute="top" secondItem="Sgi-Vf-XNm" secondAttribute="bottom" constant="16" id="mnI-kz-5bd"/>
+                <constraint firstAttribute="trailing" secondItem="MAC-MD-tZJ" secondAttribute="trailing" constant="32" id="sam-nC-J2V"/>
+                <constraint firstAttribute="trailing" secondItem="MJM-Z7-gEh" secondAttribute="trailing" constant="32" id="z1B-jy-l72"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
