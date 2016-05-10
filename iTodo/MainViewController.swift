@@ -60,9 +60,10 @@ class MainViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(MainViewCellReuseIdentifier, forIndexPath: indexPath) as! MainViewCell
         cell.titleLabel.text = datasource![indexPath.row].title
         cell.detailLabel.text = datasource![indexPath.row].note
-        cell.tagImageView.image = UIImage(named: "red")
+        cell.tagImageView.image = UIImage(named: datasource![indexPath.row].tag.color())
+        cell.todoItem = datasource![indexPath.row]
         cell.transformToLeft = { [unowned self] in
-            let editViewController = EditTaskViewController()
+            let editViewController = EditTaskViewController(todoItem: cell.todoItem!)
             self.presentViewController(editViewController, animated: true, completion: nil)
         }
         return cell

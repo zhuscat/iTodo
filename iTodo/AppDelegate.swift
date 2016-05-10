@@ -22,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print(NSTemporaryDirectory())
         
+        // 注册本地通知
+        let uns = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        application.registerUserNotificationSettings(uns)
+        
         return true
     }
 

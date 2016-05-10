@@ -23,7 +23,7 @@ class SQLiteManager {
     let tag = Expression<Int>("tag")
     let date = Expression<NSDate>("date")
     let notificationOn = Expression<Bool>("notification_on")
-    let notificationTime = Expression<Int?>("notification_time")
+    let notificationTime = Expression<NSDate?>("notification_time")
     let done = Expression<Bool>("done")
     
     func connectDatabase() -> Bool{
@@ -99,14 +99,10 @@ class SQLiteManager {
         do {
             var todoItems = [TodoItem]()
             guard let database = db else {
-                print("guard")
                 return nil
             }
-            print("outguard")
-            let items = try database.prepare(todoItem)
-            print("prepare")
+            let items = try database.prepare(todoItem.order(date.desc))
             for item in items {
-                print("items")
                 let theTag = TodoItemTag(rawValue: item[tag])
                 let theItem = TodoItem(id: item[id], title: item[title], note: item[note], tag: theTag!, date: item[date], notificationOn: item[notificationOn], notificationTime: item[notificationTime], done: item[done])
                 todoItems.append(theItem)

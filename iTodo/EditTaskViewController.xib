@@ -7,6 +7,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditTaskViewController" customModule="iTodo" customModuleProvider="target">
             <connections>
+                <outlet property="blueTag" destination="xKt-q8-kFl" id="hpn-AE-ykE"/>
+                <outlet property="notificationSwitch" destination="lY6-hP-GHk" id="zJw-EI-OPm"/>
+                <outlet property="notificationTimeLabel" destination="XyF-XY-ZM9" id="tU7-iz-zFp"/>
+                <outlet property="orangeTag" destination="aAP-GQ-XcH" id="1qi-4t-44S"/>
+                <outlet property="purpleTag" destination="g43-sL-BOE" id="dJP-5C-Lkc"/>
+                <outlet property="redTag" destination="GsG-dT-3ZJ" id="4RG-za-7H4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,18 +24,24 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="任务颜色" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yJ-cn-Xu7">
                     <rect key="frame" x="32" y="94" width="68" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="每日提醒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3H-IU-RmL">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开启提醒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3H-IU-RmL">
                     <rect key="frame" x="32" y="209" width="68" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7V-5A-VSN">
-                    <rect key="frame" x="32" y="276" width="60" height="30"/>
-                    <state key="normal" title="提醒时间"/>
+                    <rect key="frame" x="32" y="276" width="68" height="33"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="提醒时间">
+                        <color key="titleColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="notificationTimeButtonClick:" destination="-1" eventType="touchUpInside" id="6Y0-XV-OqC"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GsG-dT-3ZJ">
                     <rect key="frame" x="374" y="131" width="32" height="32"/>
@@ -38,6 +50,7 @@
                         <constraint firstAttribute="width" constant="32" id="XtC-PI-zzN"/>
                     </constraints>
                     <state key="normal" image="red"/>
+                    <state key="selected" image="red-selected"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAP-GQ-XcH">
                     <rect key="frame" x="428" y="131" width="32" height="32"/>
@@ -46,6 +59,8 @@
                         <constraint firstAttribute="width" constant="32" id="chJ-A9-INW"/>
                     </constraints>
                     <state key="normal" image="orange"/>
+                    <state key="selected" image="orange-selected"/>
+                    <state key="highlighted" image="orange-selected"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKt-q8-kFl">
                     <rect key="frame" x="482" y="131" width="32" height="32"/>
@@ -54,6 +69,8 @@
                         <constraint firstAttribute="height" constant="32" id="cqb-I7-6mD"/>
                     </constraints>
                     <state key="normal" image="blue"/>
+                    <state key="selected" image="blue-selected"/>
+                    <state key="highlighted" image="blue-selected"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g43-sL-BOE">
                     <rect key="frame" x="536" y="131" width="32" height="32"/>
@@ -62,9 +79,11 @@
                         <constraint firstAttribute="height" constant="32" id="t2J-ya-wRl"/>
                     </constraints>
                     <state key="normal" image="purple"/>
+                    <state key="selected" image="purple-selected"/>
+                    <state key="highlighted" image="purple-selected"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@9:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XyF-XY-ZM9">
-                    <rect key="frame" x="517" y="280" width="51" height="21"/>
+                    <rect key="frame" x="517" y="282" width="51" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -74,14 +93,18 @@
                 </switch>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bea-IF-yGr">
                     <rect key="frame" x="538" y="32" width="30" height="30"/>
-                    <state key="normal" title="完成"/>
+                    <state key="normal" title="完成">
+                        <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <connections>
                         <action selector="doneButtonClick:" destination="-1" eventType="touchUpInside" id="eFS-MS-crT"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQl-ez-Hob">
                     <rect key="frame" x="32" y="32" width="30" height="30"/>
-                    <state key="normal" title="取消"/>
+                    <state key="normal" title="取消">
+                        <color key="titleColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <connections>
                         <action selector="cancelButtonClick:" destination="-1" eventType="touchUpInside" id="6fQ-P6-vdx"/>
                     </connections>
@@ -117,8 +140,12 @@
     </objects>
     <resources>
         <image name="blue" width="20" height="20"/>
+        <image name="blue-selected" width="20" height="20"/>
         <image name="orange" width="20" height="20"/>
+        <image name="orange-selected" width="20" height="20"/>
         <image name="purple" width="20" height="20"/>
+        <image name="purple-selected" width="20" height="20"/>
         <image name="red" width="20" height="20"/>
+        <image name="red-selected" width="20" height="20"/>
     </resources>
 </document>

@@ -19,12 +19,10 @@ class NewTaskViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func cancelButtonClick(sender: UIButton) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
-
     @IBAction func completeButtonClick(sender: UIButton) {
         guard let title = titleTextField.text else {
             // 出现错误
