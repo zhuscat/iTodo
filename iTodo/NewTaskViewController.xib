@@ -38,20 +38,66 @@
                     <rect key="frame" x="32" y="32" width="30" height="30"/>
                     <state key="normal" title="取消"/>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QoF-AB-tB2">
+                    <rect key="frame" x="428" y="157" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="0c8-XD-sVq"/>
+                        <constraint firstAttribute="width" constant="32" id="IQH-3C-BL6"/>
+                    </constraints>
+                    <state key="normal" image="orange"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pO-Ox-MWm">
+                    <rect key="frame" x="482" y="157" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="6y6-I7-LqL"/>
+                        <constraint firstAttribute="height" constant="32" id="Xfd-h8-DKe"/>
+                    </constraints>
+                    <state key="normal" image="blue"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBI-zr-JAV">
+                    <rect key="frame" x="536" y="157" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="0rw-63-6Sg"/>
+                        <constraint firstAttribute="height" constant="32" id="Wad-78-Opd"/>
+                    </constraints>
+                    <state key="normal" image="purple"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkR-2N-FaN">
+                    <rect key="frame" x="374" y="157" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="3Su-z1-4N7"/>
+                        <constraint firstAttribute="width" constant="32" id="AA8-yL-SpE"/>
+                    </constraints>
+                    <state key="normal" image="red"/>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="QoF-AB-tB2" firstAttribute="top" secondItem="4pO-Ox-MWm" secondAttribute="top" id="1Le-nG-umD"/>
                 <constraint firstItem="jSG-en-2lJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="9w2-hZ-eTE"/>
+                <constraint firstItem="RBI-zr-JAV" firstAttribute="leading" secondItem="4pO-Ox-MWm" secondAttribute="trailing" constant="22" id="9wR-NA-g62"/>
+                <constraint firstItem="QoF-AB-tB2" firstAttribute="leading" secondItem="IkR-2N-FaN" secondAttribute="trailing" constant="22" id="BDw-dh-fS7"/>
                 <constraint firstAttribute="trailing" secondItem="Sgi-Vf-XNm" secondAttribute="trailing" constant="32" id="BTV-Jl-fLU"/>
                 <constraint firstItem="jSG-en-2lJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="32" id="C6j-kQ-ij8"/>
                 <constraint firstItem="MAC-MD-tZJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="32" id="EeX-kW-Ibf"/>
+                <constraint firstItem="4pO-Ox-MWm" firstAttribute="top" secondItem="RBI-zr-JAV" secondAttribute="top" id="RMl-gW-XAt"/>
+                <constraint firstItem="4pO-Ox-MWm" firstAttribute="leading" secondItem="QoF-AB-tB2" secondAttribute="trailing" constant="22" id="SXP-MZ-5Sy"/>
                 <constraint firstItem="MJM-Z7-gEh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="T0x-Dj-h70"/>
+                <constraint firstItem="RBI-zr-JAV" firstAttribute="top" secondItem="MJM-Z7-gEh" secondAttribute="bottom" constant="29" id="XBL-cv-yG9"/>
                 <constraint firstItem="Sgi-Vf-XNm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="ZeX-8Q-2cY"/>
                 <constraint firstItem="Sgi-Vf-XNm" firstAttribute="top" secondItem="MAC-MD-tZJ" secondAttribute="bottom" constant="16" id="bi0-gu-G47"/>
+                <constraint firstItem="RBI-zr-JAV" firstAttribute="trailing" secondItem="MJM-Z7-gEh" secondAttribute="trailing" id="fDi-fF-BeT"/>
                 <constraint firstItem="MJM-Z7-gEh" firstAttribute="top" secondItem="Sgi-Vf-XNm" secondAttribute="bottom" constant="16" id="mnI-kz-5bd"/>
                 <constraint firstAttribute="trailing" secondItem="MAC-MD-tZJ" secondAttribute="trailing" constant="32" id="sam-nC-J2V"/>
+                <constraint firstItem="IkR-2N-FaN" firstAttribute="top" secondItem="QoF-AB-tB2" secondAttribute="top" id="y8Q-RQ-1iR"/>
                 <constraint firstAttribute="trailing" secondItem="MJM-Z7-gEh" secondAttribute="trailing" constant="32" id="z1B-jy-l72"/>
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="blue" width="20" height="20"/>
+        <image name="orange" width="20" height="20"/>
+        <image name="purple" width="20" height="20"/>
+        <image name="red" width="20" height="20"/>
+    </resources>
 </document>

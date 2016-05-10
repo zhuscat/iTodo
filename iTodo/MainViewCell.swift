@@ -11,6 +11,7 @@ import UIKit
 class MainViewCell: ZCRotationTableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var tagImageView: UIImageView!
     override func awakeFromNib() {
         print("hahah")
         self.contentView.layer.borderWidth = 0.5

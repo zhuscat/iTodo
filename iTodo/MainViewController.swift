@@ -60,6 +60,11 @@ class MainViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(MainViewCellReuseIdentifier, forIndexPath: indexPath) as! MainViewCell
         cell.titleLabel.text = datasource![indexPath.row].title
         cell.detailLabel.text = datasource![indexPath.row].note
+        cell.tagImageView.image = UIImage(named: "red")
+        cell.transformToLeft = { [unowned self] in
+            let editViewController = EditTaskViewController()
+            self.presentViewController(editViewController, animated: true, completion: nil)
+        }
         return cell
     }
     

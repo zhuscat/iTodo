@@ -23,6 +23,8 @@
 		09CE53A31CE0C07E00BFD369 /* NewTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09CE53A11CE0C07E00BFD369 /* NewTaskViewController.xib */; };
 		09CE53A51CE0C30F00BFD369 /* PullAddMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE53A41CE0C30F00BFD369 /* PullAddMenu.swift */; };
 		09CE53AA1CE0C91000BFD369 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE53A91CE0C91000BFD369 /* TodoItem.swift */; };
+		09FAE8291CE1A3C900BBE778 /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FAE8271CE1A3C900BBE778 /* EditTaskViewController.swift */; };
+		09FAE82A1CE1A3C900BBE778 /* EditTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FAE8281CE1A3C900BBE778 /* EditTaskViewController.xib */; };
 		B9E8D8944F04F7A4CC46FE4B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0E6E4E76AA74C70EE5FDCC /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +81,8 @@
 		09CE53A11CE0C07E00BFD369 /* NewTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTaskViewController.xib; sourceTree = "<group>"; };
 		09CE53A41CE0C30F00BFD369 /* PullAddMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullAddMenu.swift; sourceTree = "<group>"; };
 		09CE53A91CE0C91000BFD369 /* TodoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
+		09FAE8271CE1A3C900BBE778 /* EditTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTaskViewController.swift; sourceTree = "<group>"; };
+		09FAE8281CE1A3C900BBE778 /* EditTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditTaskViewController.xib; sourceTree = "<group>"; };
 		27C107BD6FA42D16FBF50B6B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		4B0E6E4E76AA74C70EE5FDCC /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8A4BFC62CAA80FC4B032CCA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +195,8 @@
 				09CE53A01CE0C07E00BFD369 /* NewTaskViewController.swift */,
 				09CE53A11CE0C07E00BFD369 /* NewTaskViewController.xib */,
 				09CE53981CE0B74100BFD369 /* MainViewController.swift */,
+				09FAE8271CE1A3C900BBE778 /* EditTaskViewController.swift */,
+				09FAE8281CE1A3C900BBE778 /* EditTaskViewController.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -326,6 +332,7 @@
 			files = (
 				09CE53751CE0B67400BFD369 /* LaunchScreen.storyboard in Resources */,
 				09CE539F1CE0B86E00BFD369 /* MainViewCell.xib in Resources */,
+				09FAE82A1CE1A3C900BBE778 /* EditTaskViewController.xib in Resources */,
 				09CE53A31CE0C07E00BFD369 /* NewTaskViewController.xib in Resources */,
 				09CE53721CE0B67400BFD369 /* Assets.xcassets in Resources */,
 			);
@@ -401,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09CE53AA1CE0C91000BFD369 /* TodoItem.swift in Sources */,
+				09FAE8291CE1A3C900BBE778 /* EditTaskViewController.swift in Sources */,
 				09CE536B1CE0B67400BFD369 /* AppDelegate.swift in Sources */,
 				09CE53A21CE0C07E00BFD369 /* NewTaskViewController.swift in Sources */,
 				090E3EA21CE0D17D00695C78 /* SQLiteManager.swift in Sources */,
