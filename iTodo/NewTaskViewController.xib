@@ -7,7 +7,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewTaskViewController" customModule="iTodo" customModuleProvider="target">
             <connections>
+                <outlet property="blueTag" destination="4pO-Ox-MWm" id="mfK-zP-Kiw"/>
                 <outlet property="noteTextField" destination="MJM-Z7-gEh" id="MLa-h8-ONS"/>
+                <outlet property="orangeTag" destination="QoF-AB-tB2" id="pD1-AJ-t9J"/>
+                <outlet property="purpleTag" destination="RBI-zr-JAV" id="nCT-rZ-tGa"/>
+                <outlet property="redTag" destination="IkR-2N-FaN" id="02z-mc-bam"/>
                 <outlet property="titleTextField" destination="Sgi-Vf-XNm" id="alF-qi-sYB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,7 +23,9 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAC-MD-tZJ">
                     <rect key="frame" x="538" y="32" width="30" height="30"/>
-                    <state key="normal" title="完成"/>
+                    <state key="normal" title="完成">
+                        <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <connections>
                         <action selector="completeButtonClick:" destination="-1" eventType="touchUpInside" id="Lrm-xH-jTk"/>
                     </connections>
@@ -36,7 +42,9 @@
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSG-en-2lJ">
                     <rect key="frame" x="32" y="32" width="30" height="30"/>
-                    <state key="normal" title="取消"/>
+                    <state key="normal" title="取消">
+                        <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <connections>
                         <action selector="cancelButtonClick:" destination="-1" eventType="touchUpInside" id="Yfd-wF-0Gf"/>
                     </connections>
@@ -48,6 +56,8 @@
                         <constraint firstAttribute="width" constant="32" id="IQH-3C-BL6"/>
                     </constraints>
                     <state key="normal" image="orange"/>
+                    <state key="selected" image="orange-selected"/>
+                    <state key="highlighted" image="orange-selected"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pO-Ox-MWm">
                     <rect key="frame" x="482" y="175" width="32" height="32"/>
@@ -56,6 +66,8 @@
                         <constraint firstAttribute="height" constant="32" id="Xfd-h8-DKe"/>
                     </constraints>
                     <state key="normal" image="blue"/>
+                    <state key="selected" image="blue-selected"/>
+                    <state key="highlighted" image="blue-selected"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBI-zr-JAV">
                     <rect key="frame" x="536" y="175" width="32" height="32"/>
@@ -64,6 +76,8 @@
                         <constraint firstAttribute="height" constant="32" id="Wad-78-Opd"/>
                     </constraints>
                     <state key="normal" image="purple"/>
+                    <state key="selected" image="purple-selected"/>
+                    <state key="highlighted" image="purple-selected"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkR-2N-FaN">
                     <rect key="frame" x="374" y="175" width="32" height="32"/>
@@ -72,6 +86,8 @@
                         <constraint firstAttribute="width" constant="32" id="AA8-yL-SpE"/>
                     </constraints>
                     <state key="normal" image="red"/>
+                    <state key="selected" image="red-selected"/>
+                    <state key="highlighted" image="red-selected"/>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="viL-i9-7uw">
                     <rect key="frame" x="32" y="100" width="536" height="1"/>
@@ -115,12 +131,17 @@
                 <constraint firstItem="IkR-2N-FaN" firstAttribute="top" secondItem="QoF-AB-tB2" secondAttribute="top" id="y8Q-RQ-1iR"/>
                 <constraint firstAttribute="trailing" secondItem="MJM-Z7-gEh" secondAttribute="trailing" constant="32" id="z1B-jy-l72"/>
             </constraints>
+            <point key="canvasLocation" x="-5" y="128"/>
         </view>
     </objects>
     <resources>
         <image name="blue" width="20" height="20"/>
+        <image name="blue-selected" width="20" height="20"/>
         <image name="orange" width="20" height="20"/>
+        <image name="orange-selected" width="20" height="20"/>
         <image name="purple" width="20" height="20"/>
+        <image name="purple-selected" width="20" height="20"/>
         <image name="red" width="20" height="20"/>
+        <image name="red-selected" width="20" height="20"/>
     </resources>
 </document>

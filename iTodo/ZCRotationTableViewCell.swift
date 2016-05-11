@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol ZCRotationTableViewCellDelegate {
+    func ZCRotationTableViewCellTransformToLeft(cell: ZCRotationTableViewCell)
+    func ZCRotationTableViewCellTransformToRight(cell: ZCRotationTableViewCell)
+}
+
 class ZCRotationTableViewCell: UITableViewCell {
     
     var transformToLeft: (() -> ())?
@@ -15,6 +20,8 @@ class ZCRotationTableViewCell: UITableViewCell {
     var transformToRight: (() -> ())?
     
     var panGesture: UIPanGestureRecognizer = UIPanGestureRecognizer()
+    
+    var delegate: ZCRotationTableViewCellDelegate?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -64,17 +71,23 @@ class ZCRotationTableViewCell: UITableViewCell {
         self.userInteractionEnabled = false
         self.superview?.userInteractionEnabled = false
         let factor: CGFloat = isLeft ? -1 : 1
-        UIView.animateWithDuration(0.5, animations: {
+        UIView.animateWithDuration(0.2, animations: {
             self.transform = CGAffineTransformMakeTranslation(factor * self.bounds.size.width, 0)
             self.transform = CGAffineTransformRotate(self.transform, factor * CGFloat(M_PI / 12))
             }) { (_) in
-                if let block = (isLeft ? self.transformToLeft : self.transformToRight) {
-                    block()
-                    self.transform = CGAffineTransformIdentity
-                }
+//                if let block = (isLeft ? self.transformToLeft : self.transformToRight) {
+//                    block()
+//                    self.transform = CGAffineTransformIdentity
+//                }
                 UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 1, options: [], animations: {
                     self.transform = CGAffineTransformIdentity
-                }, completion: nil)
+                }) { (_) in
+                    if isLeft {
+                        self.delegate?.ZCRotationTableViewCellTransformToLeft(self)
+                    } else {
+                        self.delegate?.ZCRotationTableViewCellTransformToRight(self)
+                    }
+                }
                 self.userInteractionEnabled = true
                 self.superview?.userInteractionEnabled = true
         }

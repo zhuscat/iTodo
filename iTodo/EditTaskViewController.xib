@@ -9,7 +9,7 @@
             <connections>
                 <outlet property="blueTag" destination="xKt-q8-kFl" id="hpn-AE-ykE"/>
                 <outlet property="notificationSwitch" destination="lY6-hP-GHk" id="zJw-EI-OPm"/>
-                <outlet property="notificationTimeLabel" destination="XyF-XY-ZM9" id="tU7-iz-zFp"/>
+                <outlet property="notificationTimeButton" destination="vwo-8w-8it" id="cAU-dQ-q5M"/>
                 <outlet property="orangeTag" destination="aAP-GQ-XcH" id="1qi-4t-44S"/>
                 <outlet property="purpleTag" destination="g43-sL-BOE" id="dJP-5C-Lkc"/>
                 <outlet property="redTag" destination="GsG-dT-3ZJ" id="4RG-za-7H4"/>
@@ -33,16 +33,6 @@
                     <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7V-5A-VSN">
-                    <rect key="frame" x="32" y="276" width="68" height="33"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <state key="normal" title="提醒时间">
-                        <color key="titleColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="notificationTimeButtonClick:" destination="-1" eventType="touchUpInside" id="6Y0-XV-OqC"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GsG-dT-3ZJ">
                     <rect key="frame" x="374" y="131" width="32" height="32"/>
                     <constraints>
@@ -82,12 +72,6 @@
                     <state key="selected" image="purple-selected"/>
                     <state key="highlighted" image="purple-selected"/>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@9:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XyF-XY-ZM9">
-                    <rect key="frame" x="517" y="282" width="51" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lY6-hP-GHk">
                     <rect key="frame" x="519" y="204" width="51" height="31"/>
                 </switch>
@@ -109,6 +93,22 @@
                         <action selector="cancelButtonClick:" destination="-1" eventType="touchUpInside" id="6fQ-P6-vdx"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提醒时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNX-0b-jGj">
+                    <rect key="frame" x="32" y="282" width="68" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwo-8w-8it">
+                    <rect key="frame" x="466" y="276" width="102" height="33"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="点击设置时间">
+                        <color key="titleColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="notificationTimeButtonClick:" destination="-1" eventType="touchUpInside" id="K1A-xZ-m2x"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -117,13 +117,13 @@
                 <constraint firstItem="aAP-GQ-XcH" firstAttribute="top" secondItem="xKt-q8-kFl" secondAttribute="top" id="Bff-T7-frP"/>
                 <constraint firstItem="4yJ-cn-Xu7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="HZQ-mM-R0O"/>
                 <constraint firstItem="xQl-ez-Hob" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="32" id="JlK-Ib-l0n"/>
-                <constraint firstItem="XyF-XY-ZM9" firstAttribute="centerY" secondItem="D7V-5A-VSN" secondAttribute="centerY" id="RaR-Wv-tAr"/>
-                <constraint firstItem="D7V-5A-VSN" firstAttribute="top" secondItem="f3H-IU-RmL" secondAttribute="bottom" constant="46" id="Vxc-ST-5aN"/>
+                <constraint firstItem="YNX-0b-jGj" firstAttribute="top" secondItem="f3H-IU-RmL" secondAttribute="bottom" constant="52" id="MfQ-sb-FDs"/>
                 <constraint firstItem="g43-sL-BOE" firstAttribute="top" secondItem="4yJ-cn-Xu7" secondAttribute="bottom" constant="16" id="Wsg-Lp-O7C"/>
+                <constraint firstItem="vwo-8w-8it" firstAttribute="trailing" secondItem="lY6-hP-GHk" secondAttribute="trailing" id="X8m-yH-VWl"/>
+                <constraint firstItem="vwo-8w-8it" firstAttribute="centerY" secondItem="YNX-0b-jGj" secondAttribute="centerY" id="arm-9c-dsy"/>
                 <constraint firstItem="f3H-IU-RmL" firstAttribute="leading" secondItem="4yJ-cn-Xu7" secondAttribute="leading" id="cIs-hn-uxt"/>
                 <constraint firstItem="lY6-hP-GHk" firstAttribute="trailing" secondItem="g43-sL-BOE" secondAttribute="trailing" id="d29-XQ-hwo"/>
                 <constraint firstItem="f3H-IU-RmL" firstAttribute="top" secondItem="GsG-dT-3ZJ" secondAttribute="bottom" constant="46" id="dcH-g9-daw"/>
-                <constraint firstItem="XyF-XY-ZM9" firstAttribute="trailing" secondItem="lY6-hP-GHk" secondAttribute="trailing" id="gDR-WX-zaP"/>
                 <constraint firstAttribute="trailing" secondItem="Bea-IF-yGr" secondAttribute="trailing" constant="32" id="grG-M2-7MF"/>
                 <constraint firstItem="g43-sL-BOE" firstAttribute="leading" secondItem="xKt-q8-kFl" secondAttribute="trailing" constant="22" id="hmA-Pv-zdf"/>
                 <constraint firstItem="xKt-q8-kFl" firstAttribute="top" secondItem="g43-sL-BOE" secondAttribute="top" id="jGq-3Z-2Uf"/>
@@ -132,8 +132,8 @@
                 <constraint firstItem="GsG-dT-3ZJ" firstAttribute="top" secondItem="aAP-GQ-XcH" secondAttribute="top" id="s3W-rh-dbq"/>
                 <constraint firstItem="aAP-GQ-XcH" firstAttribute="leading" secondItem="GsG-dT-3ZJ" secondAttribute="trailing" constant="22" id="tpu-29-QRM"/>
                 <constraint firstItem="lY6-hP-GHk" firstAttribute="centerY" secondItem="f3H-IU-RmL" secondAttribute="centerY" id="umV-iQ-iTD"/>
-                <constraint firstItem="D7V-5A-VSN" firstAttribute="leading" secondItem="f3H-IU-RmL" secondAttribute="leading" id="vgb-kA-NVd"/>
                 <constraint firstItem="xQl-ez-Hob" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="xed-JM-HAQ"/>
+                <constraint firstItem="YNX-0b-jGj" firstAttribute="leading" secondItem="f3H-IU-RmL" secondAttribute="leading" id="ydD-jZ-NmI"/>
             </constraints>
             <point key="canvasLocation" x="316" y="388"/>
         </view>

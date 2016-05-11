@@ -39,7 +39,10 @@ class EditTaskViewController: UIViewController, MaskViewDelegate {
     
     @IBOutlet weak var notificationSwitch: UISwitch!
     
-    @IBOutlet weak var notificationTimeLabel: UILabel!
+    @IBOutlet weak var notificationTimeButton: UIButton!
+    
+    
+    var notificationTimeSelected = false
     
     init(todoItem: TodoItem) {
         self.todoItem = todoItem
@@ -69,9 +72,11 @@ class EditTaskViewController: UIViewController, MaskViewDelegate {
         let formatter = NSDateFormatter()
         formatter.dateFormat = "MM-dd HH:mm"
         if let date = todoItem.notificationTime {
-            notificationTimeLabel.text = formatter.stringFromDate(date)
+            print("日期已经设定了")
+            notificationTimeButton.setTitle(formatter.stringFromDate(date), forState: UIControlState.Normal)
         } else {
-            notificationTimeLabel.text = "点击设置时间"
+            print("日期还没有设定")
+            notificationTimeButton.setTitle("点击设置时间", forState: UIControlState.Normal)
         }
         
         // 设定标签选中
@@ -90,6 +95,10 @@ class EditTaskViewController: UIViewController, MaskViewDelegate {
     }
     
     @IBAction func doneButtonClick(sender: UIButton) {
+        // 如果选择了提醒时间的话，进行设置
+        if notificationTimeSelected {
+            todoItem.notificationTime = timePickerView.date
+        }
         // 存入数据库
         SQLiteManager.sharedManger.updateTodoItem(todoItem)
         // 本地通知设置
@@ -129,10 +138,10 @@ class EditTaskViewController: UIViewController, MaskViewDelegate {
     
     // MARK: MaskViewDelegate
     func maskViewDidTouch(view: MaskView) {
-        todoItem.notificationTime = timePickerView.date
+        notificationTimeSelected = true
         let formatter = NSDateFormatter()
         formatter.dateFormat = "MM-dd HH:mm"
-        notificationTimeLabel.text = formatter.stringFromDate(timePickerView.date)
+        notificationTimeButton.setTitle(formatter.stringFromDate(timePickerView.date), forState: UIControlState.Normal)
         timePickerView.removeFromSuperview()
         maskView.removeFromSuperview()
     }
