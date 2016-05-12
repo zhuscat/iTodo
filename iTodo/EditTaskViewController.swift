@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditTaskViewController: UIViewController, MaskViewDelegate {
+class EditTaskViewController: UIViewController {
     
     var todoItem: TodoItem
     
@@ -41,7 +41,6 @@ class EditTaskViewController: UIViewController, MaskViewDelegate {
     
     @IBOutlet weak var notificationTimeButton: UIButton!
     
-    
     var notificationTimeSelected = false
     
     init(todoItem: TodoItem) {
@@ -56,6 +55,11 @@ class EditTaskViewController: UIViewController, MaskViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupUI()
+        updateNotificationTimeButton(todoItem.notificationTime)
+    }
+    
+    private func setupUI() {
         // TODO: 这样写不太好，之后需要改进，可以考虑封装一下Tag
         redTag.tag = 101
         orangeTag.tag = 102
@@ -68,17 +72,6 @@ class EditTaskViewController: UIViewController, MaskViewDelegate {
         notificationSwitch.addTarget(self, action: #selector(notificationSwitchChanged), forControlEvents: UIControlEvents.ValueChanged)
         notificationSwitch.setOn(todoItem.notificationOn, animated: false)
         
-        // TODO: 整合重复代码
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "MM-dd HH:mm"
-        if let date = todoItem.notificationTime {
-            print("日期已经设定了")
-            notificationTimeButton.setTitle(formatter.stringFromDate(date), forState: UIControlState.Normal)
-        } else {
-            print("日期还没有设定")
-            notificationTimeButton.setTitle("点击设置时间", forState: UIControlState.Normal)
-        }
-        
         // 设定标签选中
         switch todoItem.tag {
         case .Red:
@@ -90,8 +83,16 @@ class EditTaskViewController: UIViewController, MaskViewDelegate {
         case .Purple:
             purpleTag.selected = true
         }
-        
-        
+    }
+    
+    private func updateNotificationTimeButton(time: NSDate?) {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "MM-dd HH:mm"
+        if let theTime = time {
+            notificationTimeButton.setTitle(formatter.stringFromDate(theTime), forState: UIControlState.Normal)
+        } else {
+            notificationTimeButton.setTitle("点击设置时间", forState: UIControlState.Normal)
+        }
     }
     
     @IBAction func doneButtonClick(sender: UIButton) {
@@ -136,16 +137,6 @@ class EditTaskViewController: UIViewController, MaskViewDelegate {
         view.addSubview(timePickerView)
     }
     
-    // MARK: MaskViewDelegate
-    func maskViewDidTouch(view: MaskView) {
-        notificationTimeSelected = true
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "MM-dd HH:mm"
-        notificationTimeButton.setTitle(formatter.stringFromDate(timePickerView.date), forState: UIControlState.Normal)
-        timePickerView.removeFromSuperview()
-        maskView.removeFromSuperview()
-    }
-    
     func addNotification(date: NSDate, id: Int64) {
         let notification = UILocalNotification()
         notification.fireDate = date
@@ -172,5 +163,14 @@ class EditTaskViewController: UIViewController, MaskViewDelegate {
                 }
             }
         }
+    }
+}
+
+extension EditTaskViewController: MaskViewDelegate {
+    func maskViewDidTouch(view: MaskView) {
+        notificationTimeSelected = true
+        updateNotificationTimeButton(timePickerView.date)
+        timePickerView.removeFromSuperview()
+        maskView.removeFromSuperview()
     }
 }

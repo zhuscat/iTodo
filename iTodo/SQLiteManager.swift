@@ -113,4 +113,37 @@ class SQLiteManager {
             return nil
         }
     }
+    
+    func loadTodoItemsDic() -> [String: [TodoItem]]? {
+        do {
+            var todoItemsDic = [String: [TodoItem]]()
+            var todoItemsUnfinished = [TodoItem]()
+            var todoItemsFinished = [TodoItem]()
+            guard let database = db else {
+                return nil
+            }
+            let itemsUnfinished = try database.prepare(todoItem.filter(done == false).order(date.desc))
+            for item in itemsUnfinished {
+                let theTag = TodoItemTag(rawValue: item[tag])
+                let theItem = TodoItem(id: item[id], title: item[title], note: item[note], tag: theTag!, date: item[date], notificationOn: item[notificationOn], notificationTime: item[notificationTime], done: item[done])
+                todoItemsUnfinished.append(theItem)
+            }
+            let itemsFinished = try database.prepare(todoItem.filter(done == true).order(date.desc))
+            for item in itemsFinished {
+                let theTag = TodoItemTag(rawValue: item[tag])
+                let theItem = TodoItem(id: item[id], title: item[title], note: item[note], tag: theTag!, date: item[date], notificationOn: item[notificationOn], notificationTime: item[notificationTime], done: item[done])
+                todoItemsFinished.append(theItem)
+            }
+            if todoItemsUnfinished.count > 0 {
+                todoItemsDic["unfinished"] = todoItemsUnfinished
+            }
+            
+            if todoItemsFinished.count > 0 {
+                todoItemsDic["done"] = todoItemsFinished
+            }
+            return todoItemsDic
+        } catch {
+            return nil
+        }
+    }
 }

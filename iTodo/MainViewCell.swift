@@ -25,7 +25,7 @@ class MainViewCell: ZCRotationTableViewCell {
                     titleLabel.attributedText = attributedTitle
                     if let note = item.note {
                         let attributedNote = NSAttributedString(string: note, attributes: [
-                            NSFontAttributeName: UIFont.systemFontOfSize(20),
+                            NSFontAttributeName: UIFont.systemFontOfSize(17),
                             NSStrikethroughStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue
                             ])
                         detailLabel.attributedText = attributedNote
@@ -37,7 +37,7 @@ class MainViewCell: ZCRotationTableViewCell {
                     titleLabel.attributedText = attributedTitle
                     if let note = item.note {
                         let attributedNote = NSAttributedString(string: note, attributes: [
-                            NSFontAttributeName: UIFont.systemFontOfSize(20)
+                            NSFontAttributeName: UIFont.systemFontOfSize(17)
                             ])
                         detailLabel.attributedText = attributedNote
                     }
@@ -46,10 +46,11 @@ class MainViewCell: ZCRotationTableViewCell {
             }
         }
     }
+    @IBOutlet weak var cardView: UIView!
     
     override func awakeFromNib() {
-        print("hahah")
-        self.contentView.layer.borderWidth = 0.5
-        self.contentView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        backgroundColor = UIColor.clearColor()
+        contentView.backgroundColor = UIColor.clearColor()
+        cardView.layer.cornerRadius = 5.0
     }
 }

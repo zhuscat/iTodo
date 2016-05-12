@@ -15,10 +15,6 @@ protocol ZCRotationTableViewCellDelegate {
 
 class ZCRotationTableViewCell: UITableViewCell {
     
-    var transformToLeft: (() -> ())?
-    
-    var transformToRight: (() -> ())?
-    
     var panGesture: UIPanGestureRecognizer = UIPanGestureRecognizer()
     
     var delegate: ZCRotationTableViewCellDelegate?
@@ -75,10 +71,6 @@ class ZCRotationTableViewCell: UITableViewCell {
             self.transform = CGAffineTransformMakeTranslation(factor * self.bounds.size.width, 0)
             self.transform = CGAffineTransformRotate(self.transform, factor * CGFloat(M_PI / 12))
             }) { (_) in
-//                if let block = (isLeft ? self.transformToLeft : self.transformToRight) {
-//                    block()
-//                    self.transform = CGAffineTransformIdentity
-//                }
                 UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 1, options: [], animations: {
                     self.transform = CGAffineTransformIdentity
                 }) { (_) in

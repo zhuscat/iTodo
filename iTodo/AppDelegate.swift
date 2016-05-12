@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.rootViewController = MainViewController()
         window?.makeKeyAndVisible()
@@ -25,6 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 注册本地通知
         let uns = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         application.registerUserNotificationSettings(uns)
+        
+        // 打开应用之后清楚红色圆圈
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+        
+        // 创建数据库表
+        SQLiteManager.sharedManger.connectDatabase()
+        SQLiteManager.sharedManger.createTodoItemTable()
         
         return true
     }

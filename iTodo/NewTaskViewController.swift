@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class NewTaskViewController: UIViewController {
 
@@ -54,12 +55,23 @@ class NewTaskViewController: UIViewController {
     }
     
     @IBAction func completeButtonClick(sender: UIButton) {
-        guard let title = titleTextField.text else {
-            // 出现错误
+        if titleTextField.text == nil || titleTextField.text == "" {
+            SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.Black)
+            SVProgressHUD.showErrorWithStatus("请输入主题")
             return
         }
-        let item = TodoItem(id: nil, title: title, note: noteTextField.text, tag: selectedTag, date: NSDate(), notificationOn: false, done: false)
+        let item = TodoItem(id: nil, title: titleTextField.text!, note: noteTextField.text, tag: selectedTag, date: NSDate(), notificationOn: false, done: false)
         print(SQLiteManager.sharedManger.addTodoItem(item))
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.titleTextField.resignFirstResponder()
+        self.noteTextField.resignFirstResponder()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.titleTextField.resignFirstResponder()
+        self.noteTextField.resignFirstResponder()
     }
 }
