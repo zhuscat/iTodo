@@ -21,11 +21,19 @@ class MainViewController: UITableViewController {
     /// 下拉添加视图
     weak var pullAddMenu: PullAddMenu?
     
+    /// 转场代理
+    var slideDownTransitionDelegate = SlideDownTransitionDelegate()
+    
     // MARK: Setup
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         setupPullAddMenu()
+        // 创建数据库表
+        // 先放在这里，因为viewDidLoad比lauch还快，导致下面的datasource没有数据
+        SQLiteManager.sharedManger.connectDatabase()
+        SQLiteManager.sharedManger.createTodoItemTable()
+        
         datasource = SQLiteManager.sharedManger.loadTodoItemsDic()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(todoItemsChanged), name: TodoItemChangedNotification, object: nil)
     }
@@ -138,6 +146,8 @@ class MainViewController: UITableViewController {
     override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if scrollView.contentOffset.y < -80 {
             let newTaskViewController = NewTaskViewController()
+            newTaskViewController.modalPresentationStyle = .Custom
+            newTaskViewController.transitioningDelegate = slideDownTransitionDelegate
             presentViewController(newTaskViewController, animated: true, completion: nil)
             pullAddMenu?.noticePull()
         }

@@ -13,6 +13,8 @@
 		0911F7101CE1EA5700E2A3BD /* MaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0911F70F1CE1EA5700E2A3BD /* MaskView.swift */; };
 		0931DB331CE4D11A00183F00 /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0931DB321CE4D11A00183F00 /* SectionView.swift */; };
 		0931DB351CE4D12500183F00 /* SectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0931DB341CE4D12500183F00 /* SectionView.xib */; };
+		09BB1D391CF351B800978C59 /* SlideDownAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB1D381CF351B800978C59 /* SlideDownAnimationController.swift */; };
+		09BB1D3B1CF356A500978C59 /* SlideDownTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB1D3A1CF356A500978C59 /* SlideDownTransitionDelegate.swift */; };
 		09CE536B1CE0B67400BFD369 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE536A1CE0B67400BFD369 /* AppDelegate.swift */; };
 		09CE53721CE0B67400BFD369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09CE53711CE0B67400BFD369 /* Assets.xcassets */; };
 		09CE53751CE0B67400BFD369 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09CE53731CE0B67400BFD369 /* LaunchScreen.storyboard */; };
@@ -68,6 +70,8 @@
 		0911F70F1CE1EA5700E2A3BD /* MaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskView.swift; sourceTree = "<group>"; };
 		0931DB321CE4D11A00183F00 /* SectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
 		0931DB341CE4D12500183F00 /* SectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionView.xib; sourceTree = "<group>"; };
+		09BB1D381CF351B800978C59 /* SlideDownAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideDownAnimationController.swift; sourceTree = "<group>"; };
+		09BB1D3A1CF356A500978C59 /* SlideDownTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideDownTransitionDelegate.swift; sourceTree = "<group>"; };
 		09CE53671CE0B67400BFD369 /* iTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09CE536A1CE0B67400BFD369 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09CE53711CE0B67400BFD369 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -206,6 +210,8 @@
 				09CE53981CE0B74100BFD369 /* MainViewController.swift */,
 				09FAE8271CE1A3C900BBE778 /* EditTaskViewController.swift */,
 				09FAE8281CE1A3C900BBE778 /* EditTaskViewController.xib */,
+				09BB1D381CF351B800978C59 /* SlideDownAnimationController.swift */,
+				09BB1D3A1CF356A500978C59 /* SlideDownTransitionDelegate.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -419,8 +425,10 @@
 			files = (
 				0911F7101CE1EA5700E2A3BD /* MaskView.swift in Sources */,
 				09CE53AA1CE0C91000BFD369 /* TodoItem.swift in Sources */,
+				09BB1D391CF351B800978C59 /* SlideDownAnimationController.swift in Sources */,
 				0931DB331CE4D11A00183F00 /* SectionView.swift in Sources */,
 				09FAE8291CE1A3C900BBE778 /* EditTaskViewController.swift in Sources */,
+				09BB1D3B1CF356A500978C59 /* SlideDownTransitionDelegate.swift in Sources */,
 				09CE536B1CE0B67400BFD369 /* AppDelegate.swift in Sources */,
 				09CE53A21CE0C07E00BFD369 /* NewTaskViewController.swift in Sources */,
 				090E3EA21CE0D17D00695C78 /* SQLiteManager.swift in Sources */,

@@ -29,10 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 打开应用之后清楚红色圆圈
         UIApplication.sharedApplication().applicationIconBadgeNumber = 0
         
-        // 创建数据库表
-        SQLiteManager.sharedManger.connectDatabase()
-        SQLiteManager.sharedManger.createTodoItemTable()
-        
         return true
     }
 
